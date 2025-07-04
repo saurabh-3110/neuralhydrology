@@ -14,6 +14,7 @@ nh.datasetzoo
    neuralhydrology.datasetzoo.camelsbr
    neuralhydrology.datasetzoo.camelscl
    neuralhydrology.datasetzoo.camelsgb
+   neuralhydrology.datasetzoo.camelsind
    neuralhydrology.datasetzoo.camelsus
    neuralhydrology.datasetzoo.caravan
    neuralhydrology.datasetzoo.genericdataset
@@ -21,3 +22,4 @@ nh.datasetzoo
    neuralhydrology.datasetzoo.lamah
    neuralhydrology.datasetzoo.template
    neuralhydrology.datasetzoo.datasetregistry
+   
