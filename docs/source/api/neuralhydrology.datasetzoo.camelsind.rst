@@ -1,5 +1,5 @@
 CamelsIND
-========
+=========
 
 .. automodule:: neuralhydrology.datasetzoo.camelsind
    :members:
