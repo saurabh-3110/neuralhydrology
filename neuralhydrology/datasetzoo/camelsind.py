@@ -46,8 +46,8 @@ class CamelsIND(BaseDataset):
     References
     ----------
     .. [#] Mangukiya, N. K., Kumar, K. B., Dey, P., Sharma, S., Bejagam, V., Mujumdar, P. P., & Sharma, A. (2025). 
-    CAMELS-IND: hydrometeorological time series and catchment attributes for 228 catchments in Peninsular India. 
-    Earth System Science Data, 17(2), 461-491.
+        CAMELS-IND: hydrometeorological time series and catchment attributes for 228 catchments in Peninsular India. 
+        Earth System Science Data, 17(2), 461-491.
     """
 
     def __init__(self,
@@ -166,12 +166,6 @@ def _process_and_split_timeseries(base_path: Path, timeseries_output_dir: Path):
     timeseries_output_dir : Path
         The path to the directory where the processed, per-basin time series
         CSV files will be saved. It will be created if it doesn't exist.
-
-    Returns
-    -------
-    None
-        This function does not return a value but saves files to disk and
-        prints summary information to the console.
     """
     # --- Define paths for time series data ---
     forcings_folder = base_path / "catchment_mean_forcings"
@@ -322,12 +316,6 @@ def _process_and_merge_attributes(base_path: Path, attributes_output_file: Path)
     attributes_output_file : Path
         The full path, including filename, where the final merged attributes
         CSV file will be saved.
-
-    Returns
-    -------
-    None
-        This function does not return a value but saves a file to disk and
-        prints progress and summary information to the console.
     """
     print("\n--- Step 2: Merging All Attribute Files ---")
     attributes_folder = base_path / 'attributes_csv'
@@ -350,28 +338,29 @@ def _process_and_merge_attributes(base_path: Path, attributes_output_file: Path)
     print(f"Consolidated attributes file saved to: {attributes_output_file}")
 
 
-# --- DOCSTRING UPDATED ---
+
 def preprocess_camels_ind_dataset(camels_base_path: str, output_dir: str):
     """Orchestrates the full preprocessing of a CAMELS-IND dataset.
     
     The raw dataset can be downloaded from `Zenodo <https://zenodo.org/records/14999580>`_.
     The output_dir is the processed CAMELS IND directory mentioned in the codes above.
     This function performs two main tasks:
+
     1.  Processes time series data (forcings, streamflow) and saves one CSV
         per basin into a `preprocessed` sub-directory. It will also print a
         summary of the available dynamic features for use in the config file.
     2.  Merges all static attribute files into a single `attributes.csv` file
         saved in the main output directory.
 
-    The final folder structure will look like this:
-    
-    output_dir/
-    ├── attributes.csv
-    └── preprocessed/
-        ├── [gauge_id_1].csv
-        ├── [gauge_id_2].csv
-        └── ...
+    The final folder structure will look like this::
 
+        output_dir/
+        ├── attributes.csv
+        └── preprocessed/
+            ├── [gauge_id_1].csv
+            ├── [gauge_id_2].csv
+            └── ...
+            
     Parameters
     ----------
     camels_base_path : str
